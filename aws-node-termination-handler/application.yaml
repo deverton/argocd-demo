@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: aws-node-termination-handler
+spec:
+  project: "default"
+  source:
+    repoURL: "https://aws.github.io/eks-charts"
+    targetRevision: 0.18.0
+    chart: aws-node-termination-handler
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: kube-system
