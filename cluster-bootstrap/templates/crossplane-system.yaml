@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: crossplane-system
+  namespace: argocd
+spec:
+  generators:
+    - clusters: {} # Automatically use all clusters defined within Argo CD
+  template:
+    metadata:
+      name: "{{name}}-crossplane-system" # 'name' field of the Secret
+    spec:
+      project: "system"
+      source:
+        repoURL: "https://kubernetes.github.io/autoscaler"
+        targetRevision: 1.8.0-rc.0.74.g6b82113f
+        chart: crossplane
+      destination:
+        server: "{{server}}" # 'server' field of the secret
+        namespace: crossplane-system
+      syncPolicy:
+        automated: {}
+        syncOptions:
+          - CreateNamespace=true
+
+
