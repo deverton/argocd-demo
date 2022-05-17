@@ -8,7 +8,9 @@
 #     - clusters: {} # Automatically use all clusters defined within Argo CD
 #   template:
 #     metadata:
-#       name: "{{name}}-cluster-autoscaler" # 'name' field of the Secret
+    #   # 'name' field of the Secret
+    #   name: >-
+    #     {{ printf "{{name}}-cluster-autoscaler" }}
 #     spec:
 #       project: "system"
 #       source:
@@ -16,7 +18,9 @@
 #         targetRevision: 9.18.0
 #         chart: cluster-autoscaler
 #       destination:
-#         server: "{{server}}" # 'server' field of the secret
+        # # 'server' field of the secret
+        # server: >-
+        #   {{ print "{{server}}" }}
 #         namespace: cluster-autoscaler
 #       syncPolicy:
 #         automated: {}

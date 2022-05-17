@@ -8,7 +8,9 @@ spec:
     - clusters: {} # Automatically use all clusters defined within Argo CD
   template:
     metadata:
-      name: "{{name}}-crossplane-system" # 'name' field of the Secret
+      # 'name' field of the Secret
+      name: >-
+        {{ printf "{{name}}-crossplane-system" }}
     spec:
       project: "system"
       source:
@@ -16,7 +18,9 @@ spec:
         targetRevision: 1.8.0-rc.0.74.g6b82113f
         chart: crossplane
       destination:
-        server: "{{server}}" # 'server' field of the secret
+        # 'server' field of the secret
+        server: >-
+          {{ print "{{server}}" }}
         namespace: crossplane-system
       syncPolicy:
         automated: {}
