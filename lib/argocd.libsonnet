@@ -8,5 +8,5 @@ local kube = import "../vendor/kube-libsonnet/kube.libsonnet";
                 "resources-finalizer.argocd.argoproj.io"
             ],
         },
-    }
+    },
 }
