@@ -1,8 +1,0 @@
-repoUrl: "https://github.com/deverton/argocd-demo.git"
-targetRevision: HEAD
-region: ""
-account: ""
-clusterName: ""
-
-clusterAutoscaler:
-  serviceAccountName:
