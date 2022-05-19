@@ -1,7 +1,7 @@
 local argocd = import "../../lib/argocd.libsonnet";
 
 {
-    ClusterAutoscaler(repoUrl, targetRevision, region, clusterName, serviceAccountName): argocd.Application("cluster-autoscaler") {
+    ClusterAutoscaler(repoUrl, targetRevision, region, clusterName, serviceAccountName, iamRoleArn): argocd.Application("cluster-autoscaler") {
         spec+: {
           project: "default",
           source: {
@@ -21,6 +21,10 @@ local argocd = import "../../lib/argocd.libsonnet";
                       {
                           "name": "cluster-autoscaler.autoDiscovery.clusterName",
                           "value": clusterName
+                      },
+                      {
+                          "name": "rbac.serviceAccount.annotations.\"eks.amazonaws.com/role-arn\"",
+                          "value": iamRoleArn
                       },
                   ],
               },
