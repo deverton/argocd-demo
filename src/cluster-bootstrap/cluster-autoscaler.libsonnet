@@ -23,7 +23,7 @@ local argocd = import "../../lib/argocd.libsonnet";
                           "value": clusterName
                       },
                       {
-                          "name": "rbac.serviceAccount.annotations.\"eks.amazonaws.com/role-arn\"",
+                          "name": "rbac.serviceAccount.annotations.\"eks\\.amazonaws\\.com/role-arn\"",
                           "value": iamRoleArn
                       },
                   ],
