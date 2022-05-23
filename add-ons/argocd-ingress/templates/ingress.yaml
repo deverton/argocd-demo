@@ -15,12 +15,16 @@ spec:
       http:
         paths:
           - backend:
-              serviceName: argogrpc
-              servicePort: 443
+              service:
+                name: argogrpc
+                port:
+                  number: 443
             pathType: ImplementationSpecific
           - backend:
-              serviceName: argocd-server
-              servicePort: 443
+              service:
+                name: argocd-server
+                port:
+                  number: 443
             pathType: ImplementationSpecific
   tls:
     - hosts:
