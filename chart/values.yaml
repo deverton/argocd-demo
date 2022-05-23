@@ -4,5 +4,11 @@ region: ""
 account: ""
 clusterName: ""
 
+# Cluster Autoscaler Values
 clusterAutoscaler:
+  enable: false
   serviceAccountName:
+
+# Metrics Server Values
+metricsServer:
+  enable: false
