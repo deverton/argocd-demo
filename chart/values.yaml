@@ -4,6 +4,11 @@ region: ""
 account: ""
 clusterName: ""
 
+# AWS Load Balancer Controller Values
+awsLoadBalancerController:
+  enable: false
+  serviceAccountName:
+
 # Cluster Autoscaler Values
 clusterAutoscaler:
   enable: false
