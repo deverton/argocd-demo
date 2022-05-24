@@ -4,6 +4,10 @@ region: ""
 account: ""
 clusterName: ""
 
+# Argo Rollout Values
+argoRollouts:
+  enable: false
+
 # AWS Load Balancer Controller Values
 awsLoadBalancerController:
   enable: false
