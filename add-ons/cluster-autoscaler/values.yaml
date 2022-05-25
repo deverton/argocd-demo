@@ -1,5 +1,12 @@
+expanderPriorities:
+  100:
+    - .*-spot-.*
+  10:
+    - .*
+
 extraArgs:
   aws-use-static-instance-list: true
+  expander: "priority"
 
 rbac:
   serviceAccount:
