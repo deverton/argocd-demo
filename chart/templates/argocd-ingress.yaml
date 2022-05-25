@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     repoURL: {{ .Values.repoUrl }}
-    chart: add-ons/argocd-ingress
+    path: add-ons/argocd-ingress
     targetRevision: {{ .Values.targetRevision }}
   destination:
     server: https://kubernetes.default.svc
