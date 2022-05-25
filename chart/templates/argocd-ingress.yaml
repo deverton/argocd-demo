@@ -20,7 +20,7 @@ spec:
         value: {{ .Values.region }}
   destination:
     server: https://kubernetes.default.svc
-    namespace: kube-system
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true    

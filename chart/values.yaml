@@ -7,6 +7,7 @@ clusterName: ""
 # Argo Rollout Values
 argoRollouts:
   enable: false
+  createNamespace: true
 
 # AWS Load Balancer Controller Values
 awsLoadBalancerController:

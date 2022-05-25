@@ -9,25 +9,25 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: {{ .Values.repoUrl }}
-    path: add-ons/cluster-autoscaler
-    targetRevision: {{ .Values.targetRevision }}
+    repoURL: https://kubernetes.github.io/autoscaler
+    chart: cluster-autoscaler
+    targetRevision: 9.15.0
     helm: 
       parameters:
-      - name: cluster-autoscaler.awsRegion
+      - name: awsRegion
         value: {{ .Values.region }}
-      - name: cluster-autoscaler.rbac.serviceAccount.name
+      - name: rbac.serviceAccount.name
         value: {{ .Values.clusterAutoscaler.serviceAccountName }}
-      - name: cluster-autoscaler.autoDiscovery.clusterName
+      - name: autoDiscovery.clusterName
         value: {{ .Values.clusterName }}
-      valueFiles:
-      - values.yaml
+      valuesFile:
+        - ../add-ons/cluster-autoscaler/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
   syncPolicy:
     automated:
-      prune: true    
+      prune: true
     retry:
       limit: 1
       backoff:
