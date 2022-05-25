@@ -9,9 +9,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: {{ .Values.repoUrl }}
-    path: add-ons/metrics-server
-    targetRevision: {{ .Values.targetRevision }}
+    repoURL: https://kubernetes-sigs.github.io/metrics-server
+    chart: metrics-server
+    targetRevision: 3.8.1
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system

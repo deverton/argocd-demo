@@ -16,12 +16,33 @@ spec:
       parameters:
       - name: awsRegion
         value: {{ .Values.region }}
-      - name: rbac.serviceAccount.create
-        value: "false"
       - name: rbac.serviceAccount.name
         value: {{ .Values.clusterAutoscaler.serviceAccountName }}
       - name: autoDiscovery.clusterName
         value: {{ .Values.clusterName }}
+      values: |
+        expanderPriorities:
+          100:
+            - .*-spot-.*
+          10:
+            - .*
+
+        extraArgs:
+          aws-use-static-instance-list: true
+          expander: "priority"
+
+        rbac:
+          serviceAccount:
+            create: false
+
+        resources:
+          limits:
+            cpu: 200m
+            memory: 512Mi
+          requests:
+            cpu: 200m
+            memory: 512Mi
+
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system

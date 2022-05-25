@@ -10,14 +10,8 @@ spec:
   project: default
   source:
     repoURL: {{ .Values.repoUrl }}
-    path: add-ons/argocd-ingress
+    chart: add-ons/argocd-ingress
     targetRevision: {{ .Values.targetRevision }}
-    helm: 
-      parameters:
-      - name: argocd-ingress.clusterName
-        value: {{ .Values.clusterName }}
-      - name: argocd-ingress.region
-        value: {{ .Values.region }}
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
