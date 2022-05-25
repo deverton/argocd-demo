@@ -20,6 +20,8 @@ spec:
         value: {{ .Values.clusterAutoscaler.serviceAccountName }}
       - name: cluster-autoscaler.autoDiscovery.clusterName
         value: {{ .Values.clusterName }}
+      valueFiles:
+      - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: kube-system
