@@ -6,19 +6,8 @@ clusterName: ""
 
 # Argo Rollout Values
 argoRollouts:
-  enable: false
   createNamespace: true
-
-# AWS Load Balancer Controller Values
-awsLoadBalancerController:
-  enable: false
-  serviceAccountName:
 
 # Cluster Autoscaler Values
 clusterAutoscaler:
-  enable: false
   serviceAccountName:
-
-# Metrics Server Values
-metricsServer:
-  enable: false
