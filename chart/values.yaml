@@ -4,9 +4,9 @@ region: ""
 account: ""
 clusterName: ""
 
-# Argo Rollout Values
-argoRollouts:
-  createNamespace: true
+# AWS Load Balancer Controller Values
+awsLoadBalancerController:
+  serviceAccountName:
 
 # Cluster Autoscaler Values
 clusterAutoscaler:
