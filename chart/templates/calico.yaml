@@ -17,7 +17,7 @@ spec:
       installation:
         kubernetesProvider: "EKS"
   destination:
-    server: https://kubernetes.default.svc
+    name: in-cluster
     namespace: tigera-operator
   syncPolicy:
     automated:

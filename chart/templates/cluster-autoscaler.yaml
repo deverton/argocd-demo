@@ -45,7 +45,7 @@ spec:
             memory: 512Mi
 
   destination:
-    server: https://kubernetes.default.svc
+    name: in-cluster
     namespace: kube-system
   syncPolicy:
     automated:

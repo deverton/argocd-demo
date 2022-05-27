@@ -12,7 +12,7 @@ spec:
     chart: metrics-server
     targetRevision: 3.8.1
   destination:
-    server: https://kubernetes.default.svc
+    name: in-cluster
     namespace: kube-system
   syncPolicy:
     automated:

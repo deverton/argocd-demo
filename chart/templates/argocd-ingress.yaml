@@ -14,7 +14,7 @@ spec:
     path: add-ons/argocd-ingress
     targetRevision: {{ .Values.targetRevision }}
   destination:
-    server: https://kubernetes.default.svc
+    name: in-cluster
     namespace: argocd
   syncPolicy:
     automated:

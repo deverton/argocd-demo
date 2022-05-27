@@ -25,7 +25,7 @@ spec:
         serviceAccount:
           create: false
   destination:
-    server: https://kubernetes.default.svc
+    name: in-cluster
     namespace: kube-system
   syncPolicy:
     automated:
