@@ -19,7 +19,9 @@ spec:
     namespace: tigera-operator
   syncPolicy:
     automated:
-      prune: true    
+      prune: true
+    syncOptions:
+      - CreateNamespace=tigera-operator
     retry:
       limit: 1
       backoff:
