@@ -11,8 +11,7 @@ metadata:
   namespace: argocd
 spec:
   rules:
-    - host: argocd.argoproj.io
-      http:
+    - http:
         paths:
           - backend:
               service:
@@ -22,7 +21,7 @@ spec:
             pathType: ImplementationSpecific
           - backend:
               service:
-                name: argocd-server
+                name: argo-cd-argocd-server
                 port:
                   number: 443
             pathType: ImplementationSpecific
