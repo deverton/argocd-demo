@@ -17,8 +17,6 @@ spec:
       parameters:
       - name: dashboard.enabled
         value: "true"
-      - name: dashboard.service.type
-        value: "LoadBalancer"
       values: |
         dashboard:
           service:
@@ -26,6 +24,8 @@ spec:
               service.beta.kubernetes.io/aws-load-balancer-type: external
               service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
               service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
+            port: 80
+            type: "LoadBalancer"
   destination:
     name: in-cluster
     namespace: argo-rollouts
