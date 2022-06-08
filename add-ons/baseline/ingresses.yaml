@@ -4,7 +4,7 @@ metadata:
   annotations:
     alb.ingress.kubernetes.io/backend-protocol: HTTPS
     # Use this annotation (which must match a service name) to route traffic to HTTP2 backends.
-    alb.ingress.kubernetes.io/conditions.argogrpc: |
+    alb.ingress.kubernetes.io/conditions.argo-cd-argocd-rpc: |
       [{"field":"http-header","httpHeaderConfig":{"httpHeaderName": "Content-Type", "values":["application/grpc"]}}]
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
   name: argocd
