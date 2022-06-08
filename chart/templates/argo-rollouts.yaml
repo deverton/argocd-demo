@@ -17,6 +17,8 @@ spec:
       parameters:
       - name: dashboard.enabled
         value: "true"
+      - name: dashboard.service.type
+        value: "LoadBalancer"
   destination:
     name: in-cluster
     namespace: argo-rollouts

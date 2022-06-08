@@ -33,7 +33,7 @@ spec:
     - name: "443"
       port: 443
       protocol: TCP
-      targetPort: 8080
+      targetPort: 3100
   selector:
     app.kubernetes.io/component: rollouts-dashboard
     app.kubernetes.io/instance: argo-rollouts
