@@ -4,10 +4,6 @@ region: ""
 account: ""
 clusterName: ""
 
-# AWS Load Balancer Controller Values
-awsLoadBalancerController:
-  serviceAccountName:
-
 # Karpenter
 karpenter:
   serviceAccountName:
