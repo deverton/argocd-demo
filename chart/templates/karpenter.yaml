@@ -23,6 +23,12 @@ spec:
           value: {{ .Values.karpenter.controllerClusterEndpoint }}
         - name: aws.defaultInstanceProfile
           value: {{ .Values.karpenter.awsDefaultInstanceProfile }}
+      values: |
+        serviceAccount:
+          create: false
+        nodeSelector:
+          kubernetes.io/os: linux
+        aws:
   destination:
     name: in-cluster
     namespace: kube-system
