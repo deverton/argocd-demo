@@ -8,6 +8,8 @@ clusterName: ""
 awsLoadBalancerController:
   serviceAccountName:
 
-# Cluster Autoscaler Values
-clusterAutoscaler:
+# Karpenter
+karpenter:
   serviceAccountName:
+  controllerClusterEndpoint:
+  awsDefaultInstanceProfile:
