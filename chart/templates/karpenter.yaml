@@ -28,7 +28,6 @@ spec:
           create: false
         nodeSelector:
           kubernetes.io/os: linux
-        aws:
   destination:
     name: in-cluster
     namespace: kube-system
