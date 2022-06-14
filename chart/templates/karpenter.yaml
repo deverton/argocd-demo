@@ -30,7 +30,7 @@ spec:
           kubernetes.io/os: linux
   destination:
     name: in-cluster
-    namespace: kube-system
+    namespace: karpenter
   syncPolicy:
     automated:
       prune: true
