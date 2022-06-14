@@ -12,7 +12,7 @@ spec:
   source:
     repoURL: "https://charts.karpenter.sh"
     chart: karpenter
-    targetRevision: "0.9.1"
+    targetRevision: "0.10.1"
     helm:
       parameters:
         - name: serviceAccount.name
