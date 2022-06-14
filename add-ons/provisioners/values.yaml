@@ -1,0 +1,5 @@
+clusterName: ""
+instanceProfile: ""
+subnetSelector: {}
+azs: []
+tags: {}

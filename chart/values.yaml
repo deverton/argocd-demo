@@ -13,3 +13,6 @@ karpenter:
   serviceAccountName:
   controllerClusterEndpoint:
   awsDefaultInstanceProfile:
+  subnetSelectors:
+  tags:
+  azs:
