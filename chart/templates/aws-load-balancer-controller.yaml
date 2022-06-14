@@ -24,6 +24,9 @@ spec:
       values: |
         serviceAccount:
           create: false
+        # Required to when running Calico
+        # https://github.com/kubernetes-sigs/aws-load-balancer-controller/issues/1591#issuecomment-721846527
+        hostNetwork: true
   destination:
     name: in-cluster
     namespace: kube-system
