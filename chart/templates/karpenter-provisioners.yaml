@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     repoURL: {{ .Values.repoUrl }}
-    path: add-ons/provisioners
+    path: add-ons/karpenter-provisioners
     targetRevision: {{ .Values.targetRevision }}
     helm:
       parameters:
