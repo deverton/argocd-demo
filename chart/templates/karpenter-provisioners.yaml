@@ -17,18 +17,16 @@ spec:
       parameters:
       - name: clusterName
         value: {{ .Values.clusterName }}
+      - name: azs
+        value: {{ .Values.karpenterProvisioners.azs }}
       values: |
-        {{- if .Values.karpenterProvisioners.azs }}
-        azs:
-          {{ toYaml .Values.karpenterProvisioners.azs | indent 2 }}
-        {{- end}}
         {{- if .Values.karpenterProvisioners.tags }}
         tags:
-          {{ toYaml .Values.karpenterProvisioners.tags | indent 2 }}
+          {{ .Values.karpenterProvisioners.tags | fromYaml }}
         {{- end}}
         {{- if .Values.karpenterProvisioners.subnetSelectors }}
         subnetSelectors:
-          {{ toYaml .Values.karpenterProvisioners.subnetSelectors | indent 2 }}
+          {{ .Values.karpenterProvisioners.subnetSelectors | fromYaml }}
         {{- end}}
   destination:
     name: in-cluster
