@@ -7,7 +7,10 @@ spec:
     {{- if .Values.azs }}
     - key: topology.kubernetes.io/zone
       operator: In
-      values: {{ .Values.azs }}
+      values:
+        {{- range .Values.azs }}
+        - {{ . }}  
+        {{- end}}
     {{- end }}
     - key: karpenter.sh/capacity-type
       operator: In
@@ -19,7 +22,6 @@ spec:
     resources:
       cpu: 1000
   provider:
-    instanceProfile: {{ .Values.instanceProfile }}
     {{- if .Values.subnetSelectors }}
     subnetSelector:
       {{ toYaml .Values.subnetSelectors | indent 6 }}
