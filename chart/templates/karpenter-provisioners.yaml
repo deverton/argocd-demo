@@ -20,15 +20,15 @@ spec:
       values: |
         {{- if .Values.karpenterProvisioners.azs }}
         azs:
-          {{ .Values.karpenterProvisioners.azs | fromYaml }}
+          {{ toYaml .Values.karpenterProvisioners.azs | indent 2 }}
         {{- end}}
         {{- if .Values.karpenterProvisioners.tags }}
         tags:
-          {{ .Values.karpenterProvisioners.tags | fromYaml }}
+          {{ toYaml .Values.karpenterProvisioners.tags | indent 2 }}
         {{- end}}
         {{- if .Values.karpenterProvisioners.subnetSelectors }}
         subnetSelectors:
-          {{ .Values.karpenterProvisioners.subnetSelectors | fromYaml }}
+          {{ toYaml .Values.karpenterProvisioners.subnetSelectors | indent 2 }}
         {{- end}}
   destination:
     name: in-cluster
