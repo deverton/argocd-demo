@@ -20,7 +20,9 @@ spec:
       values: |
         {{- if .Values.karpenterProvisioners.azs }}
         azs:
-          {{ toYaml .Values.karpenterProvisioners.azs | indent 2 }}
+          {{- range .Values.karpenterProvisioners.azs }}
+          - {{ . }}  
+          {{- end}}
         {{- end}}
         {{- if .Values.karpenterProvisioners.tags }}
         tags:
