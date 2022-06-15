@@ -20,13 +20,13 @@ spec:
       - name: azs
         values: {{ .Values.karpenterProvisioners.azs }}
       values: |
-        {{- if Values.karpenterProvisioners.tags }}
+        {{- if .Values.karpenterProvisioners.tags }}
         tags:
-          {{ toYaml .Values.tags | indent 10 }}
+          {{ toYaml .Values.karpenterProvisioners.tags | indent 10 }}
         {{- end}}
-        {{- if Values.karpenterProvisioners.subnetSelectors }}
+        {{- if .Values.karpenterProvisioners.subnetSelectors }}
         subnetSelectors:
-          {{ toYaml .Values.subnetSelectors | indent 10 }}
+          {{ toYaml .Values.karpenterProvisioners.subnetSelectors | indent 10 }}
         {{- end}}
   destination:
     name: in-cluster
