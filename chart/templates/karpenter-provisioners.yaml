@@ -17,13 +17,17 @@ spec:
       parameters:
       - name: clusterName
         value: {{ .Values.clusterName }}
+      - name: azs
+        values: {{ .Values.karpenterProvisioners.azs }}
       values: |
-        azs:
-          {{ .Values.karpenterProvisioners.azs }}
+        {{- if Values.karpenterProvisioners.tags }}
         tags:
-          {{ .Values.karpenterProvisioners.tags }}
+          {{ toYaml .Values.tags | indent 10 }}
+        {{- end}}
+        {{- if Values.karpenterProvisioners.subnetSelectors }}
         subnetSelectors:
-          {{ .Values.karpenterProvisioners.subnetSelectors }}
+          {{ toYaml .Values.subnetSelectors | indent 10 }}
+        {{- end}}
   destination:
     name: in-cluster
     namespace: default
@@ -33,6 +37,6 @@ spec:
     retry:
       limit: 1
       backoff:
-        duration: 5s 
-        factor: 2 
-        maxDuration: 1m  
+        duration: 5s
+        factor: 2
+        maxDuration: 1m
