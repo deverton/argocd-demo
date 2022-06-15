@@ -18,11 +18,11 @@ spec:
       - name: clusterName
         value: {{ .Values.clusterName }}
       - name: azs
-        value: {{ .Values.karpenter.azs }}
+        value: {{ .Values.karpenterProvisioners.azs }}
       - name: tags
-        value: {{ .Values.karpenter.tags }}
+        value: {{ .Values.karpenterProvisioners.tags }}
       - name: subnetSelectors
-        value: {{ .Values.karpenter.subnetSelectors }}
+        value: {{ .Values.karpenterProvisioners.subnetSelectors }}
   destination:
     name: in-cluster
     namespace: default

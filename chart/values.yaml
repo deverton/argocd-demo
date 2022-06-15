@@ -13,6 +13,9 @@ karpenter:
   serviceAccountName:
   controllerClusterEndpoint:
   awsDefaultInstanceProfile:
+
+# Karpenter Provisioners
+karpenterProvisioners:
   subnetSelectors:
   tags:
   azs:
