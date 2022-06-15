@@ -17,9 +17,11 @@ spec:
       parameters:
       - name: clusterName
         value: {{ .Values.clusterName }}
-      - name: azs
-        value: {{ .Values.karpenterProvisioners.azs }}
       values: |
+        {{- if .Values.karpenterProvisioners.azs }}
+        azs:
+          {{ .Values.karpenterProvisioners.azs | fromYaml }}
+        {{- end}}
         {{- if .Values.karpenterProvisioners.tags }}
         tags:
           {{ .Values.karpenterProvisioners.tags | fromYaml }}
