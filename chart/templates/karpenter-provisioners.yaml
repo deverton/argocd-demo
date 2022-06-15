@@ -26,11 +26,11 @@ spec:
         {{- end}}
         {{- if .Values.karpenterProvisioners.tags }}
         tags:
-          {{ toYaml .Values.karpenterProvisioners.tags | indent 2 }}
+          {{ toYaml .Values.karpenterProvisioners.tags }}
         {{- end}}
         {{- if .Values.karpenterProvisioners.subnetSelectors }}
         subnetSelectors:
-          {{ toYaml .Values.karpenterProvisioners.subnetSelectors | indent 2 }}
+          {{ toYaml .Values.karpenterProvisioners.subnetSelectors }}
         {{- end}}
   destination:
     name: in-cluster
